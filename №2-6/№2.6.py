@@ -1,5 +1,6 @@
 import re
 from datetime import datetime
+from fileinput import close
 
 with open('text.txt', 'r', encoding='utf-8') as file:
     text = file.read()
@@ -22,3 +23,5 @@ with open('dates.txt', 'w', encoding='utf-8') as file:
 sorted_dates = sorted(conv_dates, key=lambda x: (int(x.split('-')[0]), int(x.split('-')[1]), int(x.split('-')[2])))
 
 print(sorted_dates)
+
+file.close()
